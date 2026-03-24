@@ -1,6 +1,7 @@
 ---
 title: "[Week 1] Tutorial 1"
 date: 2026-03-14 10:00:00 -0300
+last_modified_at: 2026-03-24 10:00:00 -0300
 categories: [Free Software Development, Tutorials, Tutorial 1]
 tags: [kernel, open source, free software development]
 ---
