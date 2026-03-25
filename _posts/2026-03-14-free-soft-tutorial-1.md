@@ -26,26 +26,28 @@ sudo usermod -aG libvirt-qemu $USER
 
 # Managing disk images
 
-We used these virt-* commands to prep our environment:
+We used these `virt-*` commands to prep our environment:
 
-Check partitions: virt-filesystems --long -h --all -a my_disk.qcow2
+Check partitions: `virt-filesystems --long -h --all -a my_disk.qcow2`
 
-Extract files: virt-copy-out -a my_disk.qcow2 /boot/vmlinuz-xxx . (Great for grabbing the config or current kernel).
+See the files inside the VM: `virt-ls --add image.qcow2 --mount /dev/sda1 /boot`
 
-Resize: qemu-img create -f qcow2 new.qcow2 5G
+Extract files: `virt-copy-out -a my_disk.qcow2 /boot/vmlinuz-xxx `. (great for grabbing the config or current kernel).
 
-virt-resize --expand /dev/sda1 old.qcow2 new.qcow2
+Resize: `qemu-img create -f qcow2 new.qcow2 5G`
+
+`virt-resize --expand /dev/sda1 old.qcow2 new.qcow2`
 
 # Daily workflow
 
 Once our VM is registered in libvirt, these are the commands we'll use frequently:
 
 |Action|Command|
-|Start and connect|virsh start --console arm64|
-|Detach (escape)|Ctrl + ] (exit console without killing VM)|
-|Find IP|virsh net-dhcp-leases default|
-|Force stop|virsh destroy arm64|
-|Push code|scp my_driver.ko root@<VM_IP>:/root/|
+|Start and connect|`virsh start --console arm64`|
+|Detach (escape)|`Ctrl + ]` (exit console without killing VM)|
+|Find IP|`virsh net-dhcp-leases default`|
+|Force stop|`virsh destroy arm64`|
+|Push code|`scp my_driver.ko root@<VM_IP>:/root/`|
 
 # Some lessons learned from this tutorial
 
