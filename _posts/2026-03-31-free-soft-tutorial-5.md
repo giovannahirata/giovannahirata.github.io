@@ -1,7 +1,7 @@
 ---
 title: "[Week 5] Tutorials 5 and 6"
 date: 2026-03-25 19:02:00 -0300
-last_modified_at: 2026-03-31 19:03:00 -0300
+last_modified_at: 2026-04-01 23:03:00 -0300
 categories: [Free Software Development, Tutorials, Tutorials 5 and 6]
 tags: [kernel, open source, free software development]
 ---
@@ -49,7 +49,7 @@ Involves commiting changes locally and the dispatching them to the mailing list 
 
 # Tutorial 6
 
-The [sixth tutorial]()
+The [sixth tutorial](https://flusp.ime.usp.br/git/sending-patches-with-git-and-a-usp-email/)
 
 
 
