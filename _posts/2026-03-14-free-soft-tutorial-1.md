@@ -43,7 +43,7 @@ Resize: `qemu-img create -f qcow2 new.qcow2 5G`
 Once our VM is registered in libvirt, these are the commands we'll use frequently:
 
 |Action|Command|
-|Start and connect|`virsh start --console arm64`|
+|Start and connect|`virsh start --console arm64` \| `sudo virsh net-start default` `# starts virsh default network`|
 |Detach (escape)|`Ctrl + ]` (exit console without killing VM)|
 |Find IP|`virsh net-dhcp-leases default`|
 |Force stop|`virsh destroy arm64`|
