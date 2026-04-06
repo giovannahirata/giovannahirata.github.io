@@ -7,7 +7,7 @@ order: 4
 <!-- > Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page. -->
 <!-- {: .prompt-tip } -->
 
-I'm a computer science undergraduate student at the Institute of Mathematics, Statistics and Computer Science (IME) - University of São Paulo (USP). Currently, I'm a Cibersecurity researcher funded by FAPESP, advised by Prof. Daniel Macêdo Batista.
+I'm a computer science undergraduate student at the Institute of Mathematics, Statistics and Computer Science (IME) - University of São Paulo (USP). Currently, I'm a Cybersecurity researcher funded by FAPESP, advised by Prof. Daniel Macêdo Batista.
 
 
 
