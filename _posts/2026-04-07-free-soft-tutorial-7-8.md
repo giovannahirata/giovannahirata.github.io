@@ -1,5 +1,5 @@
 ---
-title: "[Week 5] Tutorials 7 and 8"
+title: "[Week 6] Tutorials 7 and 8"
 date: 2026-04-07 18:00:00 -0300
 last_modified_at: 2026-04-08 12:21:00 -0300
 categories: [Free Software Development, Tutorials, Tutorials 7 and 8]
