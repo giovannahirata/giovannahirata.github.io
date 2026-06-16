@@ -2,8 +2,14 @@
 title: "[Weeks 7-8] First Patch"
 date: 2026-04-20 22:16:00 -0300
 last_modified_at: 2026-04-20 22:16:00 -0300
-categories: [Free Software Development, Linux kernel patch, First patch]
-tags: [kernel, open source, free software development]
+categories:
+  - Free Software Development
+  - Linux kernel patch
+  - First patch
+tags:
+  - kernel
+  - open source
+  - free software development
 ---
 
 # My experience
