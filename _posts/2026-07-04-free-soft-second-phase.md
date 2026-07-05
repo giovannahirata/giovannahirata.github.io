@@ -38,6 +38,7 @@ Basicamente, o feedback que recebemos foi direcionado a manter a arquitetura lim
 Correções aplicadas:
 
 - Criação de `src/commands/pre/path/preprocessor_path.cpp`:
+
 ```cpp
 #include "preprocessor_path.hpp"
 #include <arkanjo/base/config.hpp>
@@ -55,6 +56,7 @@ bool PreprocessorPath::run([[maybe_unused]] const ParsedOptions& options) {
 ```
 
 - Criação de `src/commands/pre/path/preprocessor_path.hpp`:
+
 ```cpp
 /**
  * @file preprocessor_path.hpp
@@ -88,7 +90,8 @@ public:
 };
 ```
 
-- Inclusão do novo comando em `src/orchestrator_commands.hpp`:
+- Inclusão do novo comando:
+
 ```cpp
 #include "commands/pre/path/preprocessor_path.hpp"
 ```
