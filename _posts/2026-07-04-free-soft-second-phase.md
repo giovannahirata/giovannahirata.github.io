@@ -35,4 +35,62 @@ Após abrir um PR, o revisor Guilherme Ivo sugeriu ajustes, explicando o padrão
 
 Basicamente, o feedback que recebemos foi direcionado a manter a arquitetura limpa e padronizada, com boas práticas para futuras manutenções no projeto. Seguindo as orientações, removemos as mudanças do main.cpp e orchestrator_commands.hpp preservando o fluxo de execução original, e incluímos uma vírgula à direita (trailing comma) na tabela de comandos para facilitar futuros commits e não bagunçar o histórico do git blame.
 
+Correções aplicadas:
+
+- Criação de `src/commands/pre/path/preprocessor_path.cpp`:
+```cpp
+#include "preprocessor_path.hpp"
+#include <arkanjo/base/config.hpp>
+
+PreprocessorPath::PreprocessorPath() { }
+
+bool PreprocessorPath::validate([[maybe_unused]] const ParsedOptions& options) {
+    return true;
+}
+
+bool PreprocessorPath::run([[maybe_unused]] const ParsedOptions& options) {
+    std::cout << Config::config().base_path.string() << "\n";
+    return true;
+}
+```
+
+- Criação de `src/commands/pre/path/preprocessor_path.hpp`:
+```cpp
+/**
+ * @file preprocessor_path.hpp
+ * @brief Interface for displaying the cache directory path
+ * 
+ * Defines the PreprocessorPath command that outputs the absolute path
+ * of the ArKanjo cache directory. This is useful for manual maintenance,
+ * inspecting cache contents, and troubleshooting.
+ */
+
+ #pragma once
+
+ #include <arkanjo/commands/command_base.hpp>
+ #include <iostream>
+
+ /**
+  * @brief Displays the location of the ArKanjo cache directory
+  * 
+  * Handles the execution of the 'path' command, which retrieves and
+  * cleanly prints the base cache path configuration to standard output.
+  */
+class PreprocessorPath : public CommandBase<PreprocessorPath> {
+public:
+    PreprocessorPath();
+
+    COMMAND_DESCRIPTION("Display the location of the ArKanjo cache directory.")
+
+    bool validate(const ParsedOptions& options) override;
+
+    bool run(const ParsedOptions& options) override;
+};
+```
+
+- Inclusão do novo comando em `src/orchestrator_commands.hpp`:
+```cpp
+#include "commands/pre/path/preprocessor_path.hpp"
+```
+
 Depois dessas correções, com a implementação do comando path dentro do arkanjo-preprocessor e mantendo o orquestrador global apenas como roteador, a nossa contribuição ficou alinhada aos padrões do projeto. E o PR foi aprovado e integrado!
